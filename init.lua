@@ -174,10 +174,8 @@ require('lazy').setup({
     'lukas-reineke/indent-blankline.nvim',
     -- Enable `lukas-reineke/indent-blankline.nvim`
     -- See `:help indent_blankline.txt`
-    opts = {
-      char = '┊',
-      show_trailing_blankline_indent = false,
-    },
+     main = "ibl",
+     opts = {}
   },
 
   -- "gc" to comment visual regions/lines
@@ -475,6 +473,8 @@ require('neodev').setup()
 
 -- nvim-tree config empty setup using defaults
 require("nvim-tree").setup()
+-- setup indent-blankline
+require("ibl").setup()
 -- nvim-cmp supports additional completion capabilities, so broadcast that to servers
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
