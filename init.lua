@@ -273,6 +273,9 @@ vim.o.completeopt = 'menuone,noselect'
 vim.o.termguicolors = true
 
 -- [[ Basic Keymaps ]]
+vim.api.nvim_set_keymap('n', ']c', '&diff ? \']c\' : \'<cmd>lua require"gitsigns".next_hunk()<CR>\'', {expr=true, noremap=true})
+vim.keymap.set('n', '[c', '&diff ? \'[c\' : \'<cmd>lua require"gitsigns".prev_hunk()<CR>\'', {expr=true, noremap=true})
+
 
 -- Keymaps for better default experience
 -- See `:help vim.keymap.set()`
